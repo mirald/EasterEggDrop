@@ -9,10 +9,10 @@ public class HighScore : MonoBehaviour {
 
 	void Awake(){
 		if(PlayerPrefs.HasKey("EasterEggDropHighScore")){
-			score = PlayerPrefs.GetInt("ApplePickerHighScore");
+			score = PlayerPrefs.GetInt("EasterEggDropHighScore");
 		}
 
-		PlayerPrefs.SetInt("ApplePickerHighScore", score);
+		PlayerPrefs.SetInt("EasterEggDropHighScore", score);
 	}
 	
 	// Update is called once per frame
@@ -20,8 +20,8 @@ public class HighScore : MonoBehaviour {
 		Text gt = this.GetComponent<Text>();
 		gt.text = "High Score: " + score;
 
-		if(score>PlayerPrefs.GetInt("ApplePickerHighScore")){
-			PlayerPrefs.GetInt("ApplePickerHighScore");
+		if(score>PlayerPrefs.GetInt("EasterEggDropHighScore")){
+			PlayerPrefs.SetInt("EasterEggDropHighScore", score);
 		}
 	}
 }
